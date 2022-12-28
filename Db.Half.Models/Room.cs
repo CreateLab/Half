@@ -10,5 +10,7 @@ public class Room
     
     public string OwnerLogin { get; set; }
 
-    IList<User> Users { get; set; }
+    public IList<UserRoom> Users { get; set; }
+    
+    public IList<Message> Messages { get; set; }
 }

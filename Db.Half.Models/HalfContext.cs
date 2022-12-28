@@ -13,11 +13,11 @@ public class HalfContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>().HasIndex(x => x.Login).IsUnique();
-        modelBuilder.Entity<UserRoom>().HasKey(ur => new { ur.RoomId, ur.UserId });
         base.OnModelCreating(modelBuilder);
     }
 
     public DbSet<User> Users { get; set; }
     public DbSet<Room> Rooms { get; set; }
+    public DbSet<Message> Messages { get; set; }
     public DbSet<UserRoom> UserRooms { get; set; }
 }

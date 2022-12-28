@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Db.Half.Models;
 
-public record User
+public class User
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid Id { get; set; }
@@ -12,5 +12,7 @@ public record User
     public string PasswordHash { get; set; }
     public string Login { get; set; }
     
-    public IList<Room> Rooms { get; set; }
+    public IList<UserRoom> Rooms { get; set; }
+    
+    public IList<Message> Messages { get; set; }
 }
